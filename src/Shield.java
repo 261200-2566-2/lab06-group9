@@ -18,12 +18,31 @@ public class Shield {
         //set Default level to 1
     }
 
+    /**
+     * get SHItemSpeed(speed decrease when hold shield) that calculating in constructor
+     * @return SHItemSpeed as double
+     */
     public double DecreaseSped(){
         return SHItemSpeed;
     }
+
+    /**
+     * get name of shield
+     * @return a String that give the name of shield
+     */
     public String getName(){
         return name;
     }
+
+    /**
+     * get defense of shield that calculating in constructor
+     * @return defense of shield as double
+     */
     public double getDefense() {return defense; }
+
+    /**
+     * get shield level
+     * @return shield level as int
+     **/
     public int getLevel() {return SHlevel;}
 }

@@ -47,6 +47,14 @@ public class RPGcharacter implements Action,Sex {
         MaxExp = 500;
     }
 
+    /**
+     * Add accessories to each array ( ring , clothing , wrist )
+     * @param r is ring that get from the client to push into ring array
+     * @param c is clothing that get from the client to push into clothing array
+     * @param w is wrist that get from the client to push into wrist array
+     * effect : ( r , c , w ) were pushed into ring array , clothing array and wrist array
+     *          size of each array +1
+     */
     public static void AddAccessories(Ring r, Clothing c, Wrist w) {
         AllRing[Rsize] = r;
         Rsize++;
@@ -59,12 +67,20 @@ public class RPGcharacter implements Action,Sex {
         }
     }
 
+    /**
+     * Add sword and shield to each array ( sword , shield )
+     * @param sw is sword that get from the client to push into sword array
+     * @param sh is shield that get from the client to push into shield array
+     * effect : ( r , c , w ) were pushed into sword array and shield array
+     *          size of eash array +1
+     */
     public static void AddSwordandShield(Sword sw, Shield sh) {
         sword[Swsize] = sw;
         Swsize++;
         shield[SHsize] = sh;
         SHsize++;
     }
+
 
     public static void Start() {
         System.out.println("+------------------------------------+");

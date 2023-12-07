@@ -1,4 +1,10 @@
 public class AllJob implements Job{
+    /**
+     * Update player status by career
+     * @param name to choose what case of career that player chooses to update status
+     * @param player to update status
+     * effect : player status update , Status update by career
+     **/
     @Override
     public void UpdateStatus(String name, RPGcharacter player) {
         switch (name) {
