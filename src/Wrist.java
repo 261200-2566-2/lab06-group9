@@ -53,17 +53,26 @@ public class Wrist implements Accessories{
 
 
     /**
-     *
-     * @return
-     */
+     * Get a damage bonus by calculating in the constructor and writing it as a String
+     * @return String that tell details about bonus from wrist
+     **/
     @Override
     public String getBonus() {
         return "Bonus from " + name + " [ " + type + " ] "+" : +"  + String.format("%.1f",bonus) + " dmg";
     }
 
+    /**
+     * Get an Attack bonus by calculating in the constructor and make it int
+     * @return AtkBonus as int
+     */
     public int AtkBonus(){
         return (int)AtkBonus;
     }
+
+    /**
+     * Get a damage bonus by calculating in the constructor and make it int
+     * @return bonus as int
+     */
     public int getDamageBonus(){
         return (int)bonus;
     }
