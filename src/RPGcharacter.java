@@ -82,6 +82,11 @@ public class RPGcharacter implements Action,Sex {
     }
 
 
+    /**
+     * to Start game RPG
+     * effect : create 2 player and choose items then start battle ( 2 players status change )
+     *          print detail of gameplay
+     */
     public static void Start() {
         System.out.println("+------------------------------------+");
         System.out.println("|     WELCOME TO CPE GROUP9 GAME     |");
@@ -150,6 +155,13 @@ public class RPGcharacter implements Action,Sex {
             p1.SelectBattle1(p1,p2);
     }
 
+    /**
+     * player 1 action with player 2 ( call attack funtion / heal )
+     * @param x is choice of action player 1 choose in SelectBattle1 funtion
+     * @param p1 is player 1
+     * @param p2 is player 2
+     * effect : player 1 or player 2 will change status by action player 1 choose
+     */
     private void Battle1_2(int x , RPGcharacter p1 , RPGcharacter p2){
         if (x < 1 || x > 3) {
             System.out.println("Error!!! " + "[ " + p1.name + " ]" + " you enter wrong choice");
@@ -176,6 +188,14 @@ public class RPGcharacter implements Action,Sex {
             SelectBattle2(p1,p2);
         }
     }
+
+    /**
+     * player 2 action with player 1 ( call attack funtion / heal )
+     * @param x is choice of action player 2 choose in SelectBattle2 funtion
+     * @param p1 is player 1
+     * @param p2 is player 2
+     * effect : player 1 or player 2 will change status by action player 2 choose
+     */
     private void Battle2_1(int x , RPGcharacter p1 , RPGcharacter p2){
         if (x < 1 || x > 3) {
             System.out.println("Error!!! " + "[ " + p2.name + " ]" + " you enter wrong choice");
@@ -203,6 +223,12 @@ public class RPGcharacter implements Action,Sex {
         }
     }
 
+    /**
+     * Let player 1 choose action ( attack / heal / do nothing )
+     * @param p1 is player 1
+     * @param p2 is player 2
+     * effect : call Battle1_2 function
+     */
     private void SelectBattle1(RPGcharacter p1 , RPGcharacter p2){
         System.out.println("---------------------------------------------------");
         System.out.println("[ " + p1.name + " ]" + " Choose your options ");
@@ -212,6 +238,13 @@ public class RPGcharacter implements Action,Sex {
         int scBattle = bt.nextInt();
         Battle1_2(scBattle,p1,p2);
     }
+
+    /**
+     * Let player 2 choose action ( attack / heal / do nothing )
+     * @param p1 is player 1
+     * @param p2 is player 2
+     * effect : call Battle2_1 function
+     */
     private void SelectBattle2(RPGcharacter p1 , RPGcharacter p2){
         System.out.println("---------------------------------------------------");
         System.out.println("[ " + p2.name + " ]" + " Choose your options ");
@@ -222,6 +255,11 @@ public class RPGcharacter implements Action,Sex {
         Battle2_1(scBattle,p1,p2);
     }
 
+    /**
+     * choose gender to player
+     * @param gender is gender choice ( 1 male , 2 female )
+     * effect : player.sex change by gender param
+     */
     @Override
     public void SelectSex(String gender) {
         switch (gender) {
@@ -244,6 +282,12 @@ public class RPGcharacter implements Action,Sex {
         }
     }
 
+    /**
+     * Attack another player by use damage( +atk bonus if player has wrist ) calculate with another player defense
+     * @param playerAT is Attacker that use damage ( atk bonus )
+     * @param playerDF was attacked by playerAT that use defense
+     * effect : playerDF's Hp is decrease by playerAT damage ( Hp not change if playerDF defense higher than playerAT damage )
+     */
     @Override
     public void Attack(RPGcharacter playerAT , RPGcharacter playerDF) {
         if (playerAT.wrist != null) {
@@ -269,6 +313,10 @@ public class RPGcharacter implements Action,Sex {
         }
     }
 
+    /**
+     * Heal player that call this function
+     * effect :The player's HP is increased by using the player's level calculation ( + healing bonus if the player has clothing )
+     */
     @Override
     public void Heal() {
         double heal;
