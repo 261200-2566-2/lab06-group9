@@ -340,7 +340,7 @@ public class RPGcharacter implements Action,Sex {
 
     /**
      * Show character status of player
-     * effect : print detail of character
+     * effect : print detail of character status
      */
     //set default player stat
     private void PrintStatus() {
@@ -368,7 +368,7 @@ public class RPGcharacter implements Action,Sex {
 
     /**
      * 2 player select career of character
-     * @param job is career choice ( 1 Swordsman , 2 Archer , 3 Assassin)
+     * @param job is career choice ( 1 Swordsman , 2 Archer , 3 Assassin) use in switch case
      * effect : change the character's base stats according to the chosen career
      */
     private void SelectJob(String job) {
@@ -393,8 +393,8 @@ public class RPGcharacter implements Action,Sex {
     }
 
     /**
-     * Show level and increase level of character
-     * effect : increase base status of character
+     * Show level , increase level of character and update player status
+     * effect : player level+1 and increase base status of character
      */
     private void LevelUp() {
         CurrentLevel = level;
@@ -412,7 +412,7 @@ public class RPGcharacter implements Action,Sex {
     /**
      * Receive exp value from players to calculate level up
      * @param exp is experience value that the player enters for level up
-     * effect : increase character's level ( call LevelUp() function )
+     * effect : CurrentExp increase by exp and call LevelUp() function
      */
     private void getEXP(double exp) {
         CurrentExp = CurrentExp + exp;
