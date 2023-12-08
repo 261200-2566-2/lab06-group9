@@ -493,6 +493,7 @@ public class RPGcharacter implements Action,Sex {
         }
     }
 
+
     private void PrintWrist() {
         System.out.println("                      Wrist");
         System.out.println("---------------------------------------------------");
@@ -506,6 +507,13 @@ public class RPGcharacter implements Action,Sex {
             }
         }
     }
+
+    /**
+     * Select sword in shield array
+     * @param i is choice that player choose (i-1 use as index in array)
+     * effect : currentSword = sword array that i-1 index
+     *          ( result different by choice [ player level not enough / wrong i / array index i-1 is null / not use ] )
+     */
     private void CurrentSword(int i) {
         if (i < 1 || i > 6) {
             System.out.println("Error!!! " +"[ " + name + " ]" +" you enter wrong choice");
@@ -530,7 +538,12 @@ public class RPGcharacter implements Action,Sex {
 
     }
 
-
+    /**
+     * Select shield in shield array
+     * @param i is choice that player choose (i-1 use as index in array)
+     * effect : currentShield = shield array that i-1 index
+     *          ( result different by choice [ player level not enough / wrong i / array index i-1 is null / not use ] )
+     */
     private void CurrentShield(int i) {
         if (i < 1 || i > 6) {
             System.out.println("[ " + name + " ]" + " Error!!! you enter wrong choice");
@@ -554,6 +567,13 @@ public class RPGcharacter implements Action,Sex {
         }
 
     }
+
+    /**
+     * Select ring in ring array
+     * @param i is choice that player choose (i-1 use as index in array)
+     * effect : ring = ring array that i-1 index
+     *          ( result different by choice [ player level not enough / wrong i / array index i-1 is null / not use ] )
+     */
     private void CurrentRing(int i) {
         if (i < 1 || i > 6) {
             System.out.println("[ " + name + " ]" +" Error!!! you enter wrong choice");
@@ -575,6 +595,13 @@ public class RPGcharacter implements Action,Sex {
             System.out.println(ring.getBonus());
         }
     }
+
+    /**
+     * Select clothing in clothing array
+     * @param i is choice that player choose (i-1 use as index in array)
+     * effect : clothing = clothing array that i-1 index
+     *          ( result different by choice [ player level not enough / wrong i / array index i-1 is null / not use ] )
+     */
     private void CurrentClothing(int i) {
         if (i < 1 || i > 6) {
             System.out.println("[ " + name + " ]" +" Error!!! you enter wrong choice");
@@ -596,6 +623,13 @@ public class RPGcharacter implements Action,Sex {
             System.out.println(clothing.getBonus());
         }
     }
+
+    /**
+     * Select wrist in wrist array
+     * @param i is choice that player choose (i-1 use as index in array)
+     * effect : wrist = wrist array that i-1 index
+     *          ( result different by choice [ player level not enough / wrong i / array index i-1 is null / not use ] )
+     */
     private void CurrentWrist(int i) {
         if (i < 1 || i > 6) {
             System.out.println("[ " + name + " ]" +" Error!!! "+"you enter wrong choice");
@@ -618,7 +652,10 @@ public class RPGcharacter implements Action,Sex {
         }
     }
 
-
+    /**
+     * Show all sword's detail and let player choose sword
+     * effect : call PrintSword function then call CurrentSword function
+     */
     private void SelectSword() {
         Scanner sl = new Scanner(System.in);
         PrintSword();
@@ -627,6 +664,10 @@ public class RPGcharacter implements Action,Sex {
         CurrentSword(as);
     }
 
+    /**
+     * Show all shield's detail and let player choose shield
+     * effect : call PrintShield function then call CurrentShield function
+     */
     private void SelectShield() {
         Scanner sl = new Scanner(System.in);
         PrintShield();
@@ -635,6 +676,10 @@ public class RPGcharacter implements Action,Sex {
         CurrentShield(as2);
     }
 
+    /**
+     * Show all ring's detail and let player choose ring
+     * effect : call PrintRing function then call CurrentRing function
+     */
     private void SelectRing() {
         Scanner sl = new Scanner(System.in);
         System.out.println("[ " + name + " ]" +" Select your ring");
@@ -643,6 +688,11 @@ public class RPGcharacter implements Action,Sex {
         int as2 = sl.nextInt();
         CurrentRing(as2);
     }
+
+    /**
+     * Show all clothing's detail and let player choose clothing
+     * effect : call PrintClothing function then call CurrentClothing function
+     */
     private void SelectClothing(){
         Scanner sl = new Scanner(System.in);
         System.out.println("[ " + name + " ]"+" Select your clothing");
@@ -652,6 +702,10 @@ public class RPGcharacter implements Action,Sex {
         CurrentClothing(as2);
     }
 
+    /**
+     * Show all wrist's detail and let player choose wrist
+     * effect : call PrintWrist function then call CurrentWrist function
+     */
     private void SelectWrist(){
         Scanner sl = new Scanner(System.in);
         System.out.println("[ " + name + " ]"+" Select your wrist");
@@ -660,6 +714,11 @@ public class RPGcharacter implements Action,Sex {
         int as2 = sl.nextInt();
         CurrentWrist(as2);
     }
+
+    /**
+     * Show detail and choice for let player choose
+     * effect : print detail to choose type of accessories and call SelectRing / Clothing / Wrist
+     */
     private void AccessoriesChoice(){
         Scanner sc = new Scanner(System.in);
         System.out.println("+----- Choose character's accessory ----+");
