@@ -338,6 +338,10 @@ public class RPGcharacter implements Action,Sex {
         }
     }
 
+    /**
+     * Show character status of player
+     * effect : print detail of character
+     */
     //set default player stat
     private void PrintStatus() {
         System.out.println("+-------------------------------------+");
@@ -362,6 +366,11 @@ public class RPGcharacter implements Action,Sex {
 
     }
 
+    /**
+     * 2 player select career of character
+     * @param job is career choice ( 1 Swordsman , 2 Archer , 3 Assassin)
+     * effect : change the character's base stats according to the chosen career
+     */
     private void SelectJob(String job) {
         switch (job) {
             case "1" -> {
@@ -383,6 +392,10 @@ public class RPGcharacter implements Action,Sex {
         }
     }
 
+    /**
+     * Show level and increase level of character
+     * effect : increase base status of character
+     */
     private void LevelUp() {
         CurrentLevel = level;
         level++;
@@ -396,6 +409,11 @@ public class RPGcharacter implements Action,Sex {
         CurrentJob.UpdateStatus(job, this);
     }
 
+    /**
+     * Receive exp value from players to calculate level up
+     * @param exp is experience value that the player enters for level up
+     * effect : increase character's level ( call LevelUp() function )
+     */
     private void getEXP(double exp) {
         CurrentExp = CurrentExp + exp;
         while (exp >= MaxExp) {
@@ -414,6 +432,10 @@ public class RPGcharacter implements Action,Sex {
         return level;
     }
 
+    /**
+     * Shows the items the player is using
+     * effect : print all items the player is using
+     */
     private void PrintCurrentItem() {
         if(currentShield == null  && currentSword == null && ring == null &&  clothing == null && wrist == null ){
             System.out.println("No item using...");
@@ -437,6 +459,10 @@ public class RPGcharacter implements Action,Sex {
 
     }
 
+    /**
+     * Show base status of all swords
+     * effect : print all element in swords array
+     */
     private static void PrintSword() {
         System.out.println("                      Sword");
         System.out.println("---------------------------------------------------");
@@ -451,6 +477,10 @@ public class RPGcharacter implements Action,Sex {
         }
     }
 
+    /**
+     * Show base status of all shields
+     * effect : print all element in shields array
+     */
     private void PrintShield() {
         System.out.println("                      Shield");
         System.out.println("---------------------------------------------------");
@@ -465,6 +495,10 @@ public class RPGcharacter implements Action,Sex {
         }
     }
 
+    /**
+     * Show base status of all rings
+     * effect : print all element in rings array
+     */
     private void PrintRing() {
         System.out.println("                      Ring");
         System.out.println("---------------------------------------------------");
@@ -479,6 +513,10 @@ public class RPGcharacter implements Action,Sex {
         }
     }
 
+    /**
+     * Show base status of all clothing
+     * effect : print all element in clothing array
+     */
     private void PrintClothing() {
         System.out.println("                      Clothing");
         System.out.println("---------------------------------------------------");
@@ -494,6 +532,10 @@ public class RPGcharacter implements Action,Sex {
     }
 
 
+    /**
+     * Show base status of all wrists
+     * effect : print all element in wrists array
+     */
     private void PrintWrist() {
         System.out.println("                      Wrist");
         System.out.println("---------------------------------------------------");
@@ -510,7 +552,7 @@ public class RPGcharacter implements Action,Sex {
 
     /**
      * Select sword in shield array
-     * @param i is choice that player choose (i-1 use as index in array)
+     * @param i is choice that player chooses (i-1 use as index in array)
      * effect : currentSword = sword array that i-1 index
      *          ( result different by choice [ player level not enough / wrong i / array index i-1 is null / not use ] )
      */
@@ -540,7 +582,7 @@ public class RPGcharacter implements Action,Sex {
 
     /**
      * Select shield in shield array
-     * @param i is choice that player choose (i-1 use as index in array)
+     * @param i is choice that player chooses (i-1 use as index in array)
      * effect : currentShield = shield array that i-1 index
      *          ( result different by choice [ player level not enough / wrong i / array index i-1 is null / not use ] )
      */
@@ -570,7 +612,7 @@ public class RPGcharacter implements Action,Sex {
 
     /**
      * Select ring in ring array
-     * @param i is choice that player choose (i-1 use as index in array)
+     * @param i is choice that player chooses (i-1 use as index in array)
      * effect : ring = ring array that i-1 index
      *          ( result different by choice [ player level not enough / wrong i / array index i-1 is null / not use ] )
      */
@@ -598,7 +640,7 @@ public class RPGcharacter implements Action,Sex {
 
     /**
      * Select clothing in clothing array
-     * @param i is choice that player choose (i-1 use as index in array)
+     * @param i is choice that player chooses (i-1 use as index in array)
      * effect : clothing = clothing array that i-1 index
      *          ( result different by choice [ player level not enough / wrong i / array index i-1 is null / not use ] )
      */
@@ -626,7 +668,7 @@ public class RPGcharacter implements Action,Sex {
 
     /**
      * Select wrist in wrist array
-     * @param i is choice that player choose (i-1 use as index in array)
+     * @param i is choice that player chooses (i-1 use as index in array)
      * effect : wrist = wrist array that i-1 index
      *          ( result different by choice [ player level not enough / wrong i / array index i-1 is null / not use ] )
      */
